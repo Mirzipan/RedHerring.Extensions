@@ -7,8 +7,16 @@
         <Title>Red Herring Extensions</Title>
         <Authors>Mirzipan</Authors>
         <LangVersion>10</LangVersion>
+        <Description>Quality of life extensions for C#. </Description>
+        <RepositoryUrl>https://github.com/Mirzipan/RedHerring.Extensions</RepositoryUrl>
+        <Copyright>2023</Copyright>
+        <PackageTags>Extensions</PackageTags>    
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.MD</PackageReadmeFile>
     </PropertyGroup>
 
-
+    <ItemGroup>
+        <None Include="..\README.MD" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 
 </Project>
