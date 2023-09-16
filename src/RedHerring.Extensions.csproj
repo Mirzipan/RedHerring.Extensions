@@ -13,10 +13,12 @@
         <PackageTags>Extensions</PackageTags>    
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.MD</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
         <None Include="..\README.MD" Pack="true" PackagePath="\"/>
+        <None Include="..\icon.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
