@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace RedHerring.Extensions.Mathematics;
+namespace RedHerring.Extensions;
 
 public static class LongExtensions
 {        

@@ -1,4 +1,4 @@
-﻿namespace RedHerring.Extensions.Mathematics;
+﻿namespace RedHerring.Extensions;
 
 public static partial class IntExtensions
 {

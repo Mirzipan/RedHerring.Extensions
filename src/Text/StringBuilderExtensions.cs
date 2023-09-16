@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace RedHerring.Extensions.Writing;
+namespace RedHerring.Extensions.Text;
 
 public static class StringBuilderExtensions
 {

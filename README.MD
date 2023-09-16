@@ -4,7 +4,21 @@
 
 Collection of extension and utility methods I can created or collected over the years. Now they have a common place to live, to avoid having to copy them around or keep writing them all over again.
 
-## Collections
+## System
+- Action
+- Bool
+- Byte
+- Comparable
+- DateTime
+- Double
+- Float
+- Integer
+- Long
+- Object
+- Unsigned Integer
+- Unsigned Long
+
+## System.Collections
 - Array
 - Collection
 - Dictionary
@@ -13,25 +27,13 @@ Collection of extension and utility methods I can created or collected over the 
 - Queue
 - Stack
 
-## Mathematics
-- Byte
-- Double
-- Float
-- Integer
-- Long
-- Unsigned Integer
-- Unsigned Long
+## System.Numerics
+- Vector2
+- Vector3
+- Vector4
 
-## Reflection
+## System.Reflection
 - Type
 
-## Writing
-- String
+## System.Text
 - StringBuilder
-
-## Others
-- Action
-- Bool
-- Comparable
-- DateTime
-- Object

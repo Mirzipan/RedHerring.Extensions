@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace RedHerring.Extensions.Writing;
+namespace RedHerring.Extensions;
 
 public static partial class StringExtensions
 {
