@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions;
 
 public static partial class ObjectExtensions
 {
@@ -8,6 +10,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool Is<T>(this object @this) => @this is T;
         
     /// <summary>
@@ -16,6 +19,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T As<T>(this object @this) where T : class => @this as T;
         
     /// <summary>
@@ -24,6 +28,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static T[] InArray<T>(this T @this) => new[] { @this };
 
     /// <summary>
@@ -32,6 +37,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static IList<T> InList<T>(this T @this) => new List<T> { @this };
 
     /// <summary>
@@ -40,6 +46,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static HashSet<T> InHashSet<T>(this T @this) => new HashSet<T> { @this };
 
     /// <summary>
@@ -50,12 +57,13 @@ public static partial class ObjectExtensions
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static IDictionary<TKey, TValue> InDictionary<TKey, TValue>(this TValue @this,
         Func<TValue, TKey> keySelector)
     {
         return new Dictionary<TKey, TValue>
         {
-            [keySelector(@this)] = @this
+            [keySelector(@this)] = @this,
         };
     }
 }

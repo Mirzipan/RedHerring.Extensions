@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions.Reflection;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions.Reflection;
 
 public static class TypeExtensions
 {
@@ -8,6 +10,7 @@ public static class TypeExtensions
     /// <param name="this"></param>
     /// <param name="baseType"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Type GetNestedType(this Type @this, Type baseType)
     {
         return @this.GetNestedTypes().FirstOrDefault(baseType.IsAssignableFrom);
@@ -19,6 +22,7 @@ public static class TypeExtensions
     /// <param name="this"></param>
     /// <param name="targetType"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsAssignableTo(this Type @this, Type targetType) => targetType.IsAssignableFrom(@this);
 
     /// <summary>
@@ -26,6 +30,7 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsStruct(this Type @this) => @this.IsValueType && !@this.IsPrimitive && !@this.IsEnum;
 
     /// <summary>
@@ -33,6 +38,7 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool HasDefaultConstructor(this Type @this)
     {
         if (@this.IsAbstract)
@@ -48,6 +54,7 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsNullable(this Type @this)
     {
         return @this.IsGenericType && @this.GetGenericTypeDefinition() == typeof(Nullable<>);
@@ -58,6 +65,7 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool NotNullable(this Type @this)
     {
         return !@this.IsGenericType || @this.GetGenericTypeDefinition() != typeof(Nullable<>);

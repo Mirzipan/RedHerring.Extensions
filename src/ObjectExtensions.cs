@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions;
 
 public static partial class ObjectExtensions
 {
@@ -54,6 +56,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsNull<T>(this T @this) => EqualityComparer<T>.Default.Equals(@this, default);
 
     /// <summary>
@@ -62,6 +65,7 @@ public static partial class ObjectExtensions
     /// <param name="this"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsNotNull<T>(this T @this) => !EqualityComparer<T>.Default.Equals(@this, default);
 
     /// <summary>

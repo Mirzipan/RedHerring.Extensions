@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions;
 
 public static partial class StringExtensions
 {
@@ -9,6 +11,7 @@ public static partial class StringExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool NotNullOrEmpty(this string @this) => !string.IsNullOrEmpty(@this);
 
     /// <summary>
@@ -16,6 +19,7 @@ public static partial class StringExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsNullOrWhitespace(this string @this) => string.IsNullOrWhiteSpace(@this);
         
     /// <summary>
@@ -23,6 +27,7 @@ public static partial class StringExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool NotNullOrWhitespace(this string @this) => !string.IsNullOrWhiteSpace(@this);
 
     /// <summary>
@@ -31,6 +36,7 @@ public static partial class StringExtensions
     /// <param name="this"></param>
     /// <param name="default"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string ValueOrDefault(this string @this, string @default) => !string.IsNullOrEmpty(@this) ? @this : @default;
 
     /// <summary>
@@ -38,6 +44,7 @@ public static partial class StringExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string NullIfEmpty(this string @this) => !string.IsNullOrEmpty(@this) ? @this : null;
 
     /// <summary>
@@ -45,6 +52,7 @@ public static partial class StringExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string EmptyIfNull(this string @this) => !string.IsNullOrEmpty(@this) ? @this : string.Empty;
 
     #endregion Queries

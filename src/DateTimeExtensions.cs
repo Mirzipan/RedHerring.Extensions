@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions;
 
 public static class DateTimeExtensions
 {
@@ -9,6 +11,7 @@ public static class DateTimeExtensions
     /// <param name="from">Lower bound (inclusive)</param>
     /// <param name="to">Upped bound (exclusive)</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsBetween(this DateTime @this, DateTime from, DateTime to)
     {
         return @this >= from && @this < to;
@@ -21,6 +24,7 @@ public static class DateTimeExtensions
     /// <param name="from">Lower bound (inclusive)</param>
     /// <param name="to">Upped bound (inclusive)</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsBetweenInclusive(this DateTime @this, DateTime from, DateTime to)
     {
         return @this >= from && @this <= to;
@@ -33,6 +37,7 @@ public static class DateTimeExtensions
     /// <param name="from">Lower bound (exclusive)</param>
     /// <param name="to">Upped bound (exclusive)</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsBetweenExclusive(this DateTime @this, DateTime from, DateTime to)
     {
         return @this > from && @this < to;
