@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions.Mathematics;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions.Mathematics;
 
 public static class FloatExtensions
 {
@@ -10,6 +12,7 @@ public static class FloatExtensions
     /// <param name="this"></param>
     /// <param name="tolerance"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsZero(this float @this, float tolerance = float.Epsilon) => Math.Abs(@this) <= tolerance;
 
     /// <summary>
@@ -17,6 +20,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsValid(this float @this) => !float.IsNaN(@this) && !float.IsInfinity(@this);
 
     /// <summary>
@@ -26,6 +30,7 @@ public static class FloatExtensions
     /// <param name="other"></param>
     /// <param name="tolerance">Optional value that specifies how close this and the other value need to be in order to be considered equal.</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool Approximately(this float @this, float other, float tolerance = float.Epsilon)
     {
         return Math.Abs(@this - other) <= Math.Abs(tolerance);
@@ -40,6 +45,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsBetween01(this float @this) => IsBetween(@this, 0f, 1f);
 
     /// <summary>
@@ -49,6 +55,7 @@ public static class FloatExtensions
     /// <param name="min">Lower bound (inclusive)</param>
     /// <param name="max">Upped bound (inclusive)</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsBetween(this float @this, float min, float max)
     {
         return @this >= min && @this <= max;
@@ -63,6 +70,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static float Clamp01(this float @this) => Math.Clamp(@this, 0f, 1f);
 
     /// <summary>
@@ -72,6 +80,7 @@ public static class FloatExtensions
     /// <param name="min">Lower bound</param>
     /// <param name="max">Upped bound</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static float Clamp(this float @this, float min, float max) => Math.Clamp(@this, min, max);
 
     /// <summary>
@@ -79,6 +88,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static float Round(this float @this) =>  (float) Math.Round(@this);
 
     /// <summary>
@@ -86,6 +96,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int RoundToInt(this float @this) => (int) Math.Round(@this);
 
     /// <summary>
@@ -93,6 +104,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static float Ceil(this float @this) => (float) Math.Ceiling(@this);
 
     /// <summary>
@@ -100,6 +112,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int CeilToInt(this float @this) => (int) Math.Ceiling(@this);
 
     /// <summary>
@@ -107,6 +120,7 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static float Floor(this float @this) => (float) Math.Floor(@this);
 
     /// <summary>
@@ -114,12 +128,14 @@ public static class FloatExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int FloorToInt(this float @this) => (int) Math.Floor(@this);
 
     /// <summary>
     /// Returns -1 for negative numbers, 1 for positive numbers and 0 for zero.
     /// </summary>
     /// <param name="this"></param>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static float Sign(this float @this) => Math.Sign(@this);
         
     #endregion Manipulation

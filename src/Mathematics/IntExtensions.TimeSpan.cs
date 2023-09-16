@@ -1,4 +1,6 @@
-﻿namespace RedHerring.Extensions.Mathematics;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions.Mathematics;
 
 public static partial class IntExtensions
 {
@@ -7,6 +9,7 @@ public static partial class IntExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TimeSpan Days(this int @this)
     {
         return TimeSpan.FromDays(@this);
@@ -17,6 +20,7 @@ public static partial class IntExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TimeSpan Hours(this int @this)
     {
         return TimeSpan.FromHours(@this);
@@ -27,6 +31,7 @@ public static partial class IntExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TimeSpan Minutes(this int @this)
     {
         return TimeSpan.FromMinutes(@this);
@@ -37,6 +42,7 @@ public static partial class IntExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TimeSpan Seconds(this int @this)
     {
         return TimeSpan.FromSeconds(@this);
@@ -47,6 +53,7 @@ public static partial class IntExtensions
     /// </summary>
     /// <param name="this"></param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TimeSpan Milliseconds(this int @this)
     {
         return TimeSpan.FromMilliseconds(@this);

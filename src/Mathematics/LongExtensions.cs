@@ -1,15 +1,21 @@
-﻿namespace RedHerring.Extensions.Mathematics;
+﻿using System.Runtime.CompilerServices;
+
+namespace RedHerring.Extensions.Mathematics;
 
 public static class LongExtensions
 {        
     #region Equality
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsZero(this long @this) => @this == 0L;
         
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool NotZero(this long @this) => @this != 0L;
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsMin(this long @this) => @this == long.MinValue;
         
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IsMax(this long @this) => @this == long.MaxValue;
         
     #endregion Equality
@@ -21,6 +27,7 @@ public static class LongExtensions
     /// <param name="min">Lower bound</param>
     /// <param name="max">Upped bound</param>
     /// <returns></returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static long Clamp(this long @this, long min, long max)
     {
         if (@this < min)
